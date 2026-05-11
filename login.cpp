@@ -31,7 +31,10 @@ void login::loginButtonPress() {
     json["email"] = ui->emailInput->text();
     json["password"] = ui->passwordInput->text();
     req->sendRequest(QString("student/login"),
-                     [=] (const QJsonObject &data) { settings->setValue("auth_token", data["token"]); },
+                     [=] (const QJsonObject &data) {
+                        settings->setValue("auth_token", data["token"]);
+                        settings->setValue("name", data["name"]);
+    },
                     [=] (const QJsonObject &data) { ui->token->setText(data["error"].toString()); },
                     Requester::Type::POST, json.toVariantMap());
 }
