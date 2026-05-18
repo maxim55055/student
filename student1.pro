@@ -8,6 +8,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    components/requester/consts.cpp \
     components/requester/requester.cpp \
     config.cpp \
     login.cpp \
@@ -15,6 +16,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    components/requester/consts.h \
     components/requester/requester.h \
     config.h \
     login.h \
